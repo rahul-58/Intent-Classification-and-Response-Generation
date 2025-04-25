@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Voice Assistant Frontend</title>
+</head>
+<body>
+    <h1>Voice Assistant</h1>
+    <form id="queryForm">
+        <label for="utterance">User Utterance:</label><br>
+        <input type="text" id="utterance" name="utterance"><br><br>
+
+        <label for="intent">Intent:</label><br>
+        <input type="text" id="intent" name="intent"><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Assistant Response:</h2>
+    <p id="response"></p>
+
+    <script>
+        document.getElementById('queryForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const utterance = document.getElementById('utterance').value;
+            const intent = document.getElementById('intent').value;
+
+            const response = await fetch('http://127.0.0.1:8000/generate', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ user_utterance: utterance, intent: intent })
+            });
+
+            const data = await response.json();
+            document.getElementById('response').innerText = data.response;
+        });
+    </script>
+</body>
+</html>

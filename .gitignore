@@ -1,1 +1,3 @@
 server/model/
+__pycache__/
+.DS_Store

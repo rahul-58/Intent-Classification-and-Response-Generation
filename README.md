@@ -8,8 +8,8 @@ This is a lightweight FastAPI-based web server that wraps a local [Dolphin-2.6-M
 
 ```
 #capstone/
-├── app.py              # FastAPI app exposing /generate endpoint
-├── LLMMODELS/          # Folder with your Dolphin GGUF model
+├── server.py           # FastAPI app exposing /generate endpoint
+├── model/              # Folder with your Dolphin GGUF model
 │   └── dolphin-2.6-mistral-7b.Q4_K_M.gguf
 ├── index.html          # Simple UI frontend to test locally
 └── README.md           # This file
@@ -41,19 +41,19 @@ pip install fastapi uvicorn llama-cpp-python
 Download your model file (e.g., Dolphin-2.6-Mistral-7B) from HuggingFace or your storage and place it in:
 
 ```
-/LLMMODELS/dolphin-2.6-mistral-7b.Q4_K_M.gguf
+/model/dolphin-2.6-mistral-7b.Q4_K_M.gguf
 ```
 
-Update `MODEL_PATH` in `app.py` if needed.
+Update `MODEL_PATH` in `server.py` if needed.
 
 ---
 
 ### 3. ▶️ Start the Server
 
-Run this command from the directory where `app.py` exists:
+Run this command from the directory where `server.py` exists:
 
 ```bash
-uvicorn app:app --reload
+uvicorn server:app --reload
 ```
 
 You should see:

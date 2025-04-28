@@ -44,6 +44,28 @@ def load_model_and_id2label():
     """Load the GPU-trained model correctly onto CPU"""
     try:
         with st.spinner("Loading model..."):
+            
+            progress_bar = st.progress(0)
+            status_text = st.empty()
+            
+            # Simulate progress to improve user experience
+            for i in range(101):
+                # Update progress bar
+                progress_bar.progress(i)
+                
+                # Update status text based on progress
+                if i < 30:
+                    status_text.markdown("⚙️ Initializing model components...")
+                elif i < 60:
+                    status_text.markdown("📦 Loading model weights...")
+                elif i < 90:
+                    status_text.markdown("🔄 Configuring model parameters...")
+                else:
+                    status_text.markdown("✅ Finalizing model setup...")
+                
+                # Only sleep for a short time to simulate work
+                time.sleep(0.02)
+
             model_path = "model/distilbert_intent_model.pkl"
             
             with open(model_path, 'rb') as f:

@@ -85,6 +85,11 @@ You will receive a polite assistant response powered by Dolphin!
 
 ---
 
+### 5 Run the UI
+
+pip install -r requirements.txt
+python -m streamlit run app.py
+
 ## 🧪 Example curl test
 
 ```bash

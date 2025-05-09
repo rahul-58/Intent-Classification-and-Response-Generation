@@ -8,6 +8,7 @@ import io
 import requests
 
 FASTAPI_SERVER_URL = "http://127.0.0.1:8000/generate"
+# FASTAPI_SERVER_URL = "https://cde7-2601-646-8082-84a0-9937-16d2-bbe9-7353.ngrok-free.app"
 
 # Set page configuration
 st.set_page_config(

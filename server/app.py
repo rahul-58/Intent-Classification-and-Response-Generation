@@ -8,7 +8,6 @@ import io
 import requests
 
 FASTAPI_SERVER_URL = "http://127.0.0.1:8000/generate"
-# FASTAPI_SERVER_URL = "https://cde7-2601-646-8082-84a0-9937-16d2-bbe9-7353.ngrok-free.app"
 
 # Set page configuration
 st.set_page_config(
@@ -295,7 +294,7 @@ if not st.session_state.chat_history:
     st.markdown("""
     <div style="text-align: center; padding: 40px;">
         <h3>Welcome to Intent Classifier</h3>
-        <p>Type your query to classify its intent 🚀</p>
+        <p>Type your query to classify its intent and generate a response 🚀</p>
     </div>
     """, unsafe_allow_html=True)
 else:

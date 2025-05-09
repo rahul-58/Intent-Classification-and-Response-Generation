@@ -11,6 +11,8 @@ This is a lightweight FastAPI-based web server that wraps a local [Dolphin-2.6-M
 ├── server.py           # FastAPI app exposing /generate endpoint
 ├── model/              # Folder with your Dolphin GGUF model
 │   └── dolphin-2.6-mistral-7b.Q4_K_M.gguf
+|   └── distilbert_intent_model.pkl
+|   └── label_encoder.pkl
 ├── index.html          # Simple UI frontend to test locally
 └── README.md           # This file
 ```
